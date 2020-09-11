@@ -13,8 +13,9 @@ function App () {
 
 
   //setting inital state here to empty array
-  const [charactersData, setCharactersData] = useState()
+  const [charactersData, setCharactersData] = useState("")
  
+
 
  useEffect(() => {
    axios.get('https://rickandmortyapi.com/api/character')
@@ -25,7 +26,7 @@ function App () {
         console.log('ERROR when geting data from API: ', error);
         debugger;
       });
-  }, [setCharactersData]);
+  }, []);
   
 
 console.log('outside the loop data pls god: ',charactersData)
@@ -36,7 +37,7 @@ console.log('outside the loop data pls god: ',charactersData)
       {/* {charactersData.map(singleCharacter => {
         return <Character singlecharacter={singleCharacter} />
       })} */}
-      <Character charactersData={charactersData} />
+     <Character charactersData={charactersData} />
     </div>
   );
 }
